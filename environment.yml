@@ -1,0 +1,33 @@
+name: wolt_assignment_env
+channels:
+  - pytorch
+  - defaults
+  - conda-forge
+  - nvidia
+dependencies:
+  - matplotlib
+  - seaborn     
+  - nbstripout
+  - numpy
+  - pandas
+  - pillow
+  - pip
+  - pytest
+  - python
+  - pytorch
+  - pytorch-cuda
+  - scikit-learn
+  - scipy
+  - sqlite
+  - torchvision
+  - torchtext
+  - jupyter
+  - nbgrader
+  - nbval
+  - pip:
+    - einops
+    - peft
+    - transformers
+    - pytorch-lightning
+    - matplotlib-inline
+    - pytorch-lightning

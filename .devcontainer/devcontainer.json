@@ -1,0 +1,40 @@
+{
+	"name": "Ubuntu 24.04",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	"features": {
+		"ghcr.io/devcontainers/features/python:1": {
+			"version": "latest"
+		},
+		"ghcr.io/rocker-org/devcontainer-features/quarto-cli:1": {}
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "python3 -m pip install --upgrade pip && pip install -r .devcontainer/requirements.txt && quarto install tinytex && bash .devcontainer/setup-conda.sh",
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Configure tool-specific properties.
+	"customizations": {
+		// Configure properties specific to VS Code.
+		"vscode": {
+			// Set *default* container specific settings.json values on container create.
+			//"settings": {},
+			"extensions": [
+				"ms-toolsai.jupyter",
+				"quarto.quarto",
+				"ms-toolsai.datawrangler",
+				"mechatroner.rainbow-csv",
+				"ms-python.python",
+				"docsmsft.docs-markdown"
+			]
+		}
+	},
+
+	"runArgs": [
+		"--gpus",
+		"all"
+	],
+
+	// Set `remoteUser` to `root` to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}
